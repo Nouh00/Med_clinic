@@ -1,0 +1,105 @@
+{% load static %}
+
+
+<div class="row">
+  <!--first row-->
+  <div class="col">
+    <!--col in 1st row-->
+    <div class="logo">
+      <!--logo div-->
+      <a href="Dashboard.html"> <img src="{% static 'img/appointment_form/LOGO-01.svg' %}" alt="LOGO"></a>
+    </div>
+    <!--logo div-->
+  </div>
+  <!--col in 1st row-->
+</div>
+<!--first row-->
+
+<div class="row py-2 ">
+  <!--Second row-->
+  <div class="col gy-5">
+    <!--col in 2nd row-->
+    <div class="dashboard">
+      <!--dashboard div-->
+      <a href="{% url 'accounts:dashboard' %}">Dashboard</a>
+    </div>
+    <!--dashboard div-->
+  </div>
+  <!--col in 2nd row-->
+</div>
+<!--Second row-->
+
+<div class="row py-2">
+  <!--Third row-->
+  <div class="col">
+    <!--col in 3rd row-->
+    <div class="appointments">
+      <!--Appointment div-->
+      <a href="{% url 'appointments:appointments' %}">Appointments</a>
+    </div>
+    <!--Appointment div-->
+  </div>
+  <!--col in 3rd row-->
+</div>
+<!--Third row-->
+
+<div class="row py-2">
+  <div class="col">
+    <div class="patients">
+      <a href="{% url 'patients:patients' %}">Patients</a>
+    </div>
+  </div>
+</div>
+
+<div class="row py-2">
+  <div class="col">
+    <div class="consultations">
+      <a href="{% url 'consultations:consultations' %}">Consultations</a>
+    </div>
+  </div>
+</div>
+
+<div class="row py-2">
+  <div class="col">
+    <div class="drugs">
+      <a href="{% url 'drugs:drugs' %}">Drugs</a>
+    </div>
+  </div>
+</div>
+
+<div class="row py-2">
+  <div class="col">
+    <div class="bills">
+      <a href="{% url 'bills:bills' %}">Bill</a>
+    </div>
+  </div>
+</div>
+
+<div class="row py-2">
+  <div class="col">
+    <div class="prescriptions">
+      <a href="{% url 'prescriptions:prescriptions' %}">Prescriptions</a>
+    </div>
+  </div>
+</div>
+ 
+<div class="row py-2">
+  <div class="col gy-5">
+    <hr style="width:20%; height: 2px; margin-top: 17%;">
+    <div class="profile">   
+      <h4>Signed as {{request.user.groups.get }}</h4>
+      <!--My profile-->
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <form id='my_form' class="logout" action="{% url 'accounts:logout' %}" method='post'>
+      {% csrf_token %}
+      <a style="color: rgba(224, 0, 0, 0.815) ;" href="javascript:{}"
+        onclick="document.getElementById('my_form').submit();">Logout</a>
+    </form>
+  </div>
+</div>
+

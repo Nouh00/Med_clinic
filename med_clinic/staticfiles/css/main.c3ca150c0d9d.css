@@ -1,0 +1,163 @@
+*{
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #555555;
+}
+
+.logo {
+  width: 80%;
+  margin-left: 8%;
+  margin-bottom: 70%;
+}
+
+.dashboard,.appointments,.patients{
+
+  margin-top: 9%;
+}
+
+#dashboard{
+  color: #3399ff;
+}
+
+a:link, a:visited{
+  text-decoration: none;
+  color: #b1b1b1;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 150%;
+}
+
+a:hover{
+  color: #3399ff;
+}
+
+#Add-btn,#Search-btn{
+  font-family: "Lato", sans-serif;
+  background-color: #3399ff;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid ;
+  border-width: 2px;
+  border-color: #3399ff;
+  color: white;
+}
+
+#filter-droplist{
+  
+  width: 200px;
+  font-family: "Lato", sans-serif;
+  color: #3399ff;
+  background-color: transparent;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid ;
+  border-width: 2px;
+  border-color: #3399ff;
+
+}
+
+#Page-title{
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 350%;
+  color: #3399ff; 
+}
+
+#searchbar{
+  width: 250px;
+  border-color: #3399ff;
+  border-width: 2px;
+  border-radius: 7px;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+}
+
+#dropdown-item{
+
+  color: #b1b1b1;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+  font-size: 120%;
+  justify-content: center;
+
+}
+
+#dropdown-item:hover{
+
+  color: #3399ff;
+
+}
+
+#Approve-appointment-btn{
+  font-family: "Lato", sans-serif;
+  background-color: #3399ff;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid ;
+  border-width: 2px;
+  border-color: #3399ff;
+  color: white;
+}
+
+#Delete-appointment-btn{
+  font-family: "Lato", sans-serif;
+  background-color: #da0b0b;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid ;
+  border-width: 2px;
+  border-color: #da0b0b;
+  color: white;
+}
+
+.dropdown-menu{
+  width: 200px;
+}
+
+#calendar-icon{
+  width: 30px;
+}
+
+#appointment-collapse-list{
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+}
+
+#Collapse-item{
+
+  color: #b1b1b1;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+  font-size: 120%;
+  justify-content: center;
+
+}
+
+#Collapse-item:hover{
+
+  color: #3399ff;
+
+}
+
+#viewprofile-btn,#editprofile-btn{
+  font-family: "Lato", sans-serif;
+  background-color: #3399ff;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid ;
+  border-width: 2px;
+  border-color: #3399ff;
+  color: white;
+}
+
+#deleteprofile-btn{
+  font-family: "Lato", sans-serif;
+  background-color: #da0b0b;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid ;
+  border-width: 2px;
+  border-color: #da0b0b;
+  color: white;
+}

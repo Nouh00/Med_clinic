@@ -1,0 +1,406 @@
+
+* {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #555555;
+}
+
+#medicalclinic-logo {
+  max-width: 55%;
+  height: auto;
+}
+
+.nav-link {
+  font-size: 17px;
+}
+
+
+
+
+/* ---------------------------------------===== *# SECTIONS #* =====-------------------------------------------*/
+#section-0 {
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+#section-1,
+#section-2,
+#section-3,
+#section-4,
+#section-5 {
+  background-color: #f1f9ff;
+}
+
+#section-6 {
+  height: max-content;
+}
+
+#section-7 {
+  height: 100vh;
+}
+
+#footer {
+  height: max-content;
+  background-color: #333333;
+}
+
+#row-1 {
+  display: flex;
+  align-items: center;
+  padding-top: 6rem !important;
+}
+
+
+
+
+/* ---------------------------------------===== Texts =====-------------------------------------------*/
+
+.home-bio {
+  font-size: 1.2rem;
+  color: #a1a1a1;
+  font-weight: 500;
+  margin-top: 1.3rem;
+  padding-left: 6.5rem;
+}
+
+#header-1 {
+  color: #3399ff;
+  font-weight: 700;
+  font-size: 5.5rem;
+}
+
+#header-1 div {
+  color: #929292;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  line-height: 1.8rem;
+}
+
+#header-2 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+#header-3 {
+  color: #3399ff;
+  font-weight: 700;
+  font-size: 3.5rem;
+  text-align: center;
+
+  margin-bottom: 3rem;
+}
+
+
+
+
+
+
+/* -----------------------------------===== Typed text =====-----------------------------------------------*/
+
+#typed-text {
+  font-size: 3.3rem;
+  font-weight: normal;
+}
+
+#typed-text span {
+  color: #3399ff;
+  font-weight: normal;
+}
+
+
+
+
+
+
+/* --------------------------------===== Buttons =====--------------------------------------------------*/
+
+#booking-btn {
+  background-color: #3399ff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 7px;
+  border: solid;
+  border-width: 2px;
+  border-color: #3399ff;
+  color: white;
+  padding: 0.7rem;
+  width: 18rem;
+}
+
+#signup { /*link*/
+  border: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  width: 5rem;
+  border-color: #3399ff;
+  color: #3399ff;
+  text-align: center;
+}
+
+
+
+
+
+/* --------------------------------===== Scroll bar =====--------------------------------------------------*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 50px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 50px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a1a1a1;
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(109, 109, 109);
+  border-radius: 50px;
+}
+
+
+
+
+/* ------------------------------===== Icons =====----------------------------------------------------*/
+
+
+#scheduling-icon {
+  width: 30rem;
+}
+
+#prescription-icon {
+  width: 30rem;
+}
+
+#records-icon {
+  width: 30rem;
+}
+
+#bills-icon {
+  width: 30rem;
+}
+
+#analytics-icon {
+  width: 27rem;
+}
+
+#logo-img {
+  width: 45rem;
+  margin-top: 4.5rem;
+}
+
+#about-txt {
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+#last-txt {
+  color: #ffffff;
+  text-align: center;
+  font-weight: 500;
+}
+
+#logo-footer {
+  width: 5rem;
+}
+
+
+
+/* ---------------------------------===== Team pics/names =====-------------------------------------------------*/
+
+#avatar-A {
+  width: 20rem;
+}
+
+#names {
+  margin-top: 2rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+#positions {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#avatar-N {
+  width: 20rem;
+}
+
+#avatar-P {
+  width: 20rem;
+}
+
+
+
+/* --------------------------------===== Signup/login ======--------------------------------------------------*/
+
+#login-btn,
+#create-profile-btn {
+  font-family: "Lato", sans-serif;
+  background-color: #3399ff;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid;
+  border-width: 2px;
+  border-color: #3399ff;
+  color: white;
+}
+
+
+
+input[type="text"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="email"], #sex {
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+}
+
+
+#logInlabel,
+#signUplabel {
+  font-weight: bold;
+  color: #757575;
+}
+
+#modalheader {
+  background-color: #ffffff;
+  box-shadow: #000000;
+}
+
+a:link {
+  text-decoration-line: none;
+}
+
+
+
+
+
+
+
+
+/*============================= Phone ===============================*/
+
+@media only screen and (max-width: 450px) {
+  .navbar-brand {
+    width: 80%;
+  }
+
+  #about-txt {
+    font-weight: 500;
+    font-size: 0.8rem;
+  }
+
+  #header-3 {
+    color: #3399ff;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+
+    margin-bottom: 1.5rem;
+  }
+
+  #last-txt {
+    color: #ffffff;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.8rem;
+  }
+
+  #typed-text {
+    font-size: 2.3rem;
+    font-weight: normal;
+  }
+
+  .home-bio {
+    font-size: 0.9rem;
+    color: #a1a1a1;
+    font-weight: 500;
+    margin-top: 1.3rem;
+    padding-left: 6.5rem;
+  }
+}
+
+
+
+
+
+
+/*============================= Tablet ===============================*/
+
+@media only screen and (max-width: 800px) {
+  #typed-text-col {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .home-bio {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  #booking-btn-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  #section1-row {
+    margin-top: 6.2rem !important;
+  }
+
+  #scheduling-icon {
+    width: 28rem;
+  }
+
+  #prescription-icon {
+    width: 28rem;
+  }
+
+  #records-icon {
+    width: 28rem;
+  }
+
+  #bills-icon {
+    width: 28rem;
+  }
+
+  #analytics-icon {
+    width: 25rem;
+  }
+
+  #header-1 {
+    color: #3399ff;
+    font-weight: 700;
+    font-size: 3.5rem;
+    text-align: center;
+  }
+
+  #header-1 div {
+    color: #929292;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+  #logo-img {
+    width: 25rem;
+    margin-top: 4.5rem;
+  }
+}

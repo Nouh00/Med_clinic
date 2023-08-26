@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Edit drug
+{% endblock  %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row py-5 px-5">
+<form action="" method='POST'>
+                        {% csrf_token %}
+                        <div class="row py-1">
+                          <!--First name-->
+                          {{drug_form.brand}}
+                        </div>
+
+                        <div class="row py-1">
+                          <!--Last name-->
+                          {{drug_form.name}}
+                        </div>
+
+                        <div class="row py-1">
+                          <!--Birth date-->
+                          {{drug_form.category}} 
+                        </div>
+                        <div class="row py-1">
+                          <!--Birth date-->
+                          {{drug.added_date}} 
+                        </div>
+                        <div class="row py-1">
+                          <div class="col d-flex justify-content-center py-3">
+                            <button class="btn btn-primary btn-lg" type="submit" id="create-profile-btn">Save</button>
+                          </div>
+                        </div>
+
+                      </form>
+</div>
+</div>
+{% endblock  %}

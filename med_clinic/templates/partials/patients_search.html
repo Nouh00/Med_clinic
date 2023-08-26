@@ -1,0 +1,37 @@
+<ul class="list-group">
+{% if patients %}
+            {% for patient in patients %}
+
+            <!--Patients item 01-->
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-8 py-2">{{patient.fname}} {{patient.lname}}</div>
+                    <div class="col-md d-flex justify-content-end">
+                        <form action="patient_profile/{{ patient.patient_id }}/" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-md" id="viewprofile-btn">View profile</button>
+                        </form>
+                    </div>
+                    <div class="col-md">
+                    <form action="{% url 'patients:edit_patient' patient.patient_id %}">
+                    {% csrf_token %}
+                        <button type="submit" class="btn btn-primary btn-md" id="editprofile-btn">Edit</button>
+                    </form>
+                    </div>
+                    
+                    <div class="col-md">
+                        <form action="delete_patient/{{ patient.patient_id }}/" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-md" id="deleteprofile-btn">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+            <!--End Patient item 01-->
+
+            <!--Add Patients items Here!-->
+            {% endfor %}
+            {% else %}
+            <h4>No patients found!</h4>
+            {% endif %}
+        </ul>

@@ -1,0 +1,263 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} View Prescription {% endblock %}
+
+{% block content %}
+
+<div class="col-xl-10"
+    style="background-color: #fafafa; height: 100vh; background-image: url('{% static 'img/patient_form/01.png' %}');">
+
+    <div class="container px-lg-5">
+        <div class="row mx-lg-5 px-lg-5">
+            <div class="col mx-lg-5 px-lg-5">
+
+
+
+                <!-- === Modal Body === -->
+                <div class="modal-body">
+                    <div class="row mt-4">
+                        <div class="col pt-2 d-flex justify-content-center">
+                            <img src="{% static 'img/patient_form/prescreption-01.svg' %}" alt="logo"
+                                style="width:50%;">
+                        </div>
+                    </div>
+                    <hr style="margin-top: 43px; display: block;">
+                    <div class="row px-3">
+                        <div class="col">
+                            Date: {{presc_data.doc_date}}<br> <br>
+                            Patient Name: {{patient.fname}} {{patient.lname}}<br>
+                            Sex:  Mba33d<br>
+                            Age: {{patient.age}}<br>
+                            Patient file No. {{presc_data.patient.patient_id}}<br>
+                        </div>
+                    </div>
+
+                    <hr style="display: block;">
+
+                    <table id="drugs-table">
+                                        <tr>
+                                            <th>
+                                                <p>Drug name</p>
+                                            </th>
+                                            <th>
+                                                <p>Dosage(mg)</p>
+                                            </th>
+                                            <th>
+                                                <p>Timing</p>
+                                            </th>
+                                            <th>
+                                                <p>Morning</p>
+                                            </th>
+                                            <th>
+                                                <p>Noon</p>
+                                            </th>
+                                            <th>
+                                                <p>Night</p>
+                                            </th>
+                                            <th>
+                                                <p>Duration(Days)</p>
+                                            </th>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.drug1 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.dosage1  }}
+                                            {% endfor %}
+                                            </td>
+                                            <td id="when">
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.time1 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.morning1 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.noon1 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.night1 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.duration1 }}
+                                            {% endfor %}
+                                            </td>
+                                        </tr>
+
+                                        
+                                        <tr>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.drug2 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.dosage2  }}
+                                            {% endfor %}
+                                            </td>
+                                            <td id="when">
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.time2 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.morning2 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.noon2 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.night2 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.duration2 }}
+                                            {% endfor %}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.drug3 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.dosage3  }}
+                                            {% endfor %}
+                                            </td>
+                                            <td id="when">
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.time3 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.morning3 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.noon3 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.night3 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.duration3 }}
+                                            {% endfor %}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.drug4 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.dosage4  }}
+                                            {% endfor %}
+                                            </td>
+                                            <td id="when">
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.time4 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.morning4 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.noon4 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.night4 }}
+                                            {% endfor %}
+                                            </td>
+                                            <td>
+                                            {% for key, value in drug_data.items %}
+                                                    {{ value.duration4 }}
+                                            {% endfor %}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div class="row px-3 mt-5">
+                                            <div class="col-2">
+                                                <p>Note</p>
+                                            </div>
+                                        </div>
+                                        <div class="row px-3">
+                                            <div class="col">
+                                                {{presc_data.note}}
+                                            </div>
+                                        </div>
+                    </div>
+
+                    <hr style="display: block;">
+
+                    <div class="row px-3">
+                        <div class="col">
+                            Doctor name: <br>
+                        </div>
+                        <div class="col ps-5">
+                            Signature.
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer text-center">
+                        <button id="adddrug" class="btn btn-primary w-100" type="button">Print</button>
+                    </div>
+
+                    <div class="col d-flex justify-content-center">
+                        <a href="{% url 'prescriptions:prescriptions' %}"> <button id="back" class="btn btn-secondary"
+                                type="button" style="width: 100%;">⮌
+                                Back</button>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

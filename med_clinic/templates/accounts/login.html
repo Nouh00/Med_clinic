@@ -1,0 +1,75 @@
+{% load static %}
+
+
+<main class="form-login">
+  <form action="{% url 'accounts:login' %}" method="post">
+  {% csrf_token %}
+    <h1 class="h3 mb-3 fw-normal">Please LogIn</h1>
+    {{ form }}
+    {% if request.GET.next %}
+    <input type="hidden" name="next" value="{{ request.GET.next }}" >
+    {% endif %}
+
+    <input type="submit" value="LogIn">
+  </form>
+</main>
+
+    <!--===== ** #Login/Signup Modals ** ====-->
+
+
+    <div class="modal fade" id="logIn" aria-hidden="true" aria-labelledby="logInlabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- === Modal Header === -->
+                <div class="modal-header text-center shadow mb-3" id="modalheader">
+                    <h5 class="modal-title w-100" id="logInlabel">Log in</h5>
+                </div>
+                <!-- === End Modal Header === -->
+
+                <!-- === Modal Body === -->
+                <div class="modal-body">
+
+                    <div class="container" id="Login-form">
+                        <!--Login form-->
+
+                        <form action="{% url 'accounts:login' %}" method="post">
+                        {% csrf_token %}
+                            <div class="row py-2">
+                                <!--Username-->
+                                
+                                <label>Username</label>
+                                    {{login_form.username}}
+                                
+                            </div>
+
+                            <div class="row py-2">
+                            
+                            <label>Password</label>
+                                <!--Password-->
+                                {{login_form.password}}
+                            
+                            </div>
+
+                            <div class="row py-2">
+                                <!--Login btn-->
+                                <div class="col-xl d-flex justify-content-center gy-2">
+                                    <button class="btn btn-primary btn-lg" type="submit" id="login-btn">Log in</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!--End Form-->
+
+                </div>
+                <!-- === End Modal Body === -->
+
+                <div class="modal-footer text-center">
+                    <p class="w-100">Forgot your password? <a href="{% url 'reset_password' %}">Reset Password</a></p>
+                </div>
+                <!-- === End Modal Footer === -->
+
+            </div>
+        </div>
+    </div>

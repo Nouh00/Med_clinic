@@ -1,0 +1,36 @@
+<ul class="list-group">
+{% if drugs_list %}
+      {% for drug in drugs_list %}
+      <!--Drugs item 01-->
+      <li class="list-group-item">
+        <div class="row">
+
+          <div class="col-md-4 py-2">{{drug.name}}</div>
+          <div class="col-md-4 py-2">{{drug.category}}</div>
+          
+          <div class="col-md d-flex justify-content-end">
+          
+          <form action="{% url 'drugs:edit_drug' drug.id %}" >
+          {% csrf_token %}
+            <button type="submit" class="btn btn-primary btn-md" id="editdrug-btn">Edit</button>
+          </form>
+          </div>
+
+          <div class="col-md">
+            <form action="delete_drug/{{ drug.id }}/" method='post'>
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger btn-md" id="deletedrug-btn">Delete</button>
+            </form>
+            
+          </div>
+        
+        </div>
+      </li>
+      <!--End Drugs item 01-->
+
+      <!--Add Drugs items Here!-->
+      {% endfor %}
+    </ul>
+    {% else %}
+    <h3>No drugs found!</h3>
+    {% endif %}

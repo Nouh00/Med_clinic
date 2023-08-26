@@ -1,0 +1,100 @@
+  
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+#numberinput{
+  width: 100%;
+  margin: 5px;
+  padding:15px 20px;
+  display: inline-block;
+  border: 3px solid #c4c4c4;
+  border-radius: 10px;
+}
+
+
+#fname,#lname,#bdate,#age,#phonenum,#adresse{
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #757575;
+  font-size: 130%;
+  margin-left: 3%;
+}
+
+#fname span,#lname span,#bdate span,#age span,#phonenum span,#adresse span{
+  color: #333333;
+  margin-left: 10px;
+}
+
+
+.logo {
+  width: 30%;
+  margin-bottom: 2%;
+}
+
+div h1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 450%;
+  color: #3399ff;
+}
+
+div h3{
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 200%;
+  color: #3399ff;
+}
+
+div h1 span {
+  font-weight: 900;
+}
+
+.patient-img {
+  width: 100%;
+}
+
+.doctor-img, .secretary-img {
+  width: 78%;
+}
+
+.form-control-lg {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+
+input[type="text"],
+[type="email"],
+[type="date"] {
+  width: 100%;
+  margin: 5px;
+  padding:15px 20px;
+  display: inline-block;
+  border: 3px solid #c4c4c4;
+  border-radius: 10px;
+
+}
+
+.btn-lg {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  background-color: #3399ff;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none ;
+  width: 30%;
+  padding: 1%;
+
+
+}
+
+.success-img{
+  margin-top: 8%;
+  width: 30%;
+}
+
+div h2{
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #757575;
+}
+

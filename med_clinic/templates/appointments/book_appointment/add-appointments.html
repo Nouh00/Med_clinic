@@ -1,0 +1,47 @@
+{% extends 'appointments\book_appointment\base_book.html' %}
+
+
+{% block content %}
+
+              <!--Appointment form-->
+              <div class="appointment-form">
+                <form enctype="multipart/form-data" action="{% url 'appointments:add-appointment' %}" method='POST'>
+                {% csrf_token %}
+                  <!--Container-->
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-6"> <!--First name-->
+                        {{patient_form.fname}}
+                      </div>
+                      <div class="col-md-6"><!--Last name-->
+                        {{patient_form.lname}}
+                      </div>
+                      <div class="col"><!--Birth date-->
+                        {{patient_form.birth}}  
+                      </div>
+                      <div class="col"><!--Birth date-->
+                        {{patient_form.gender}}  
+                      </div>
+                    </div>
+                    <div class="col"><!--Mail-->
+                      {{patient_form.email}}
+                    </div>
+                    <div class="col"><!--Phone num-->
+                      {{patient_form.phone}}
+                    </div>
+                    <div class="col"><!--Adresse-->
+                      {{patient_form.adresse}}
+                    </div>
+                    <div class="col"><!--Date-->
+                      <input type="text" class="form-control form-control-lg" name='appointment_date' id="colFormLabelLg" placeholder="Appointment date .." onfocus="(this.type='date')"> 
+                      <input type="hidden" value="Pending" name='status'>
+                      <input type="hidden" value="yes_success" name='dirc'>  
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                      <button class="btn btn-primary btn-lg" type="submit">Leave a request</button>
+                    </div>
+                  </div> <!--End Container-->
+                </form> <!--End Form-->
+              </div>
+
+{% endblock  %}

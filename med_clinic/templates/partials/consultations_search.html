@@ -1,0 +1,32 @@
+<ul class="list-group">
+{% if consultations %}
+              {% for consultation in consultations %}
+              <!--Consultations item 01-->
+              <li class="list-group-item">
+                <div class="row">
+                  
+                  <div class="col-md-1 py-2">{{consultation.id}}</div>
+                  <div class="col-md-4 py-2">{{consultation.patient.fname}}</div>
+                  <div class="col-md-3 py-2">{{consultation.added_date}}</div>
+
+                  <div class="col-md ">
+                  <form action="view_consult/{{consultation.id}}" method='post'>
+                  {% csrf_token %}
+                    <button type="submit" class="btn btn-primary btn-md" id="editdrug-btn">View</button>
+                  </form>
+                  </div>
+                  <div class="col-md">
+                    <form action="delete_consult/{{consultation.id}}" method='post'>
+                    {% csrf_token %}
+                      <button type="submit" class="btn btn-danger btn-md" id="deletecons-btn">Delete</button>
+                    </form>
+                  </div>
+
+                </div>
+              </li>
+              <!--End Consultations item 01-->
+                {% endfor %}
+{% else %}
+<h3>No consultations found!</h3>              <!--Add Consultations items Here!-->
+{% endif %}
+            </ul>

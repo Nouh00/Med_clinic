@@ -1,0 +1,33 @@
+<ul class="list-group">
+{% if appointments %}
+            {% for patient in appointments %}
+
+            <!--Appointment item 01-->
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-5 py-2">{{patient.patient.fname}} {{patient.patient.lname}}</div>
+                    <div class="col-md-3 py-2">{{patient.appointment_date}}</div>
+                    <div class="col d-flex justify-content-end">
+                        <form action="change_state/{{ patient.patient.patient_id }}/" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary btn-md"
+                                id="Approve-appointment-btn">{{patient.appointment_state}}</button>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <form action="delete_appointment/{{ patient.patient.patient_id }}/" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-md"
+                                id="Delete-appointment-btn">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+            <!--End Appointment item 01-->
+
+            <!--Add Appointments items Here!-->
+            {% endfor %}
+{% else %}
+    <h3>No appointments found!</h3>
+{% endif %}
+        </ul>

@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+*{
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #555555;
+}
+@keyframes blinker {
+  from {opacity: 1.0;}
+  to {opacity: 0.0;}
+}
+
+.blink:after {
+  text-decoration: blink;
+  animation-name: blinker;
+  animation-duration: 0.6s;
+  animation-iteration-count:infinite;
+  animation-timing-function:ease-in-out;
+  animation-direction: alternate;
+  content: 'ing...';
+}
+.logo {
+  width: 80%;
+  margin-left: 8%;
+}
+
+
+.profile{
+  margin-top: 2%;
+}
+
+.dashboard{
+  margin-top: 50%;
+}
+
+
+a:link, a:visited{
+  text-decoration: none;
+  color: #b1b1b1;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 150%;
+}
+
+a:hover{
+  color: #3399ff;
+}
+
+#icon-1,#icon-2,#icon-3,#icon-4{
+  width: 5rem;
+}
+
+#title-1{
+  font-weight: 700;
+}
+#num-1{
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+#card-txt1,#card-txt2,#card-txt3,#card-txt4,#card-txt5,#card-txt6,#card-txt7{
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+#card-title1,#card-title2,#card-title3,#card-title4,#card-title5,#card-title6,#card-title7{
+  font-weight: 700;
+  color: #3399ff;
+}
+ #drugs-table td{
+  text-align: left;
+  padding-right: 60px;
+
+}
+
+#show-prescription{
+  font-family: "Lato", sans-serif;
+  background-color: transparent;
+  color: #3399ff;
+  font-weight: 700;
+  border-radius: 7px;
+  border: none;
+  border-color: #3399ff;
+}
+
+#drugs-table th{
+  text-align: left;
+}
+
+#back{
+  background-color: transparent;
+  color: #686868;
+  font-weight: 700;
+
+  border: none;
+
+
+}
+
+#Add-btn,#Search-btn,#next-btn{
+  font-family: "Lato", sans-serif;
+  background-color: #3399ff;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid ;
+  border-width: 2px;
+  border-color: #3399ff;
+  color: white;
+}
+
+#Secondary-btn{
+  font-family: "Lato", sans-serif;
+  background-color: #808080;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid ;
+  border-width: 2px;
+  border-color: #808080;
+  color: white;
+}
+
+
+#filter-droplist{
+  
+  width: 200px;
+  font-family: "Lato", sans-serif;
+  color: #3399ff;
+  background-color: transparent;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid ;
+  border-width: 2px;
+  border-color: #3399ff;
+
+}
+
+#Page-title{
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 350%;
+  color: #3399ff; 
+}
+
+#searchbar{
+  width: 250px;
+  border-color: #3399ff;
+  border-width: 2px;
+  border-radius: 7px;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+}
+
+#dropdown-item{
+
+  color: #b1b1b1;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+  font-size: 120%;
+  justify-content: center;
+
+}
+
+#dropdown-item:hover{
+
+  color: #3399ff;
+
+}
+
+#Approve-appointment-btn{
+  font-family: "Lato", sans-serif;
+  background-color: #3399ff;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid ;
+  border-width: 2px;
+  border-color: #3399ff;
+  color: white;
+}
+
+#Delete-appointment-btn,#deletedrug-btn,#deletecons-btn{
+  font-family: "Lato", sans-serif;
+  background-color: #da0b0b;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid ;
+  border-width: 2px;
+  border-color: #da0b0b;
+  color: white;
+}
+
+.dropdown-menu{
+  width: 200px;
+}
+
+#calendar-icon{
+  width: 30px;
+}
+
+#appointment-collapse-list{
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+}
+
+#Collapse-item{
+
+  color: #b1b1b1;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+  font-size: 120%;
+  justify-content: center;
+
+}
+
+#Collapse-item:hover{
+
+  color: #3399ff;
+
+}
+
+#viewprofile-btn,#editprofile-btn,#editcons-btn,#editdrug-btn{
+  font-family: "Lato", sans-serif;
+  background-color: #3399ff;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid ;
+  border-width: 2px;
+  border-color: #3399ff;
+  color: white;
+}
+
+#deleteprofile-btn{
+  font-family: "Lato", sans-serif;
+  background-color: #da0b0b;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid ;
+  border-width: 2px;
+  border-color: #da0b0b;
+  color: white;
+}
+
+div label{
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#when-droplist, #drugs-DataList{
+  border-radius: 10px;
+}
+
+#login-btn,#create-profile-btn{
+  font-family: "Lato", sans-serif;
+  background-color: #3399ff;
+  font-weight: 700;
+  border-radius: 7px;
+  border: solid ;
+  border-width: 2px;
+  border-color: #3399ff;
+  color: white;
+}
+
+#username,#password{
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #757575;
+  font-size: 130%;
+}
+
+#username span,#password span{
+  color: #333333;
+}
+
+input[type="text"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="email"]{
+border: 1px solid #c4c4c4;
+border-radius: 10px;
+
+}
+
+#logInlabel, #signUplabel,#newpatientpopuplabel,#newappointmentpopuplabel,#newdrugpopuplabel,#consultationlabel,#prescriptionlabel{
+  font-weight: bold;
+  color: white;
+  
+}
+
+#modalheader{
+  background-color: #3399ff;
+  box-shadow: #000000;
+}
+
+#drugscategory-droplist,#patients-droplist,#emergency-droplist,#secretary-droplist,#drugs-droplist{
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+}
+
+select option{
+  font-weight: normal;
+}
+
+
+#emergency-droplist 
+
+select option{
+  font-weight: normal;
+  border-radius: 50px;
+}
+
+
+
+div div textarea,#reasons-textarea{
+  border-radius: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+div div label{
+  margin-bottom: 15px;
+}
+
+div div div div p {
+  font-weight: 100;
+  font-size: 13px;
+}
+
+#note-textarea {
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 20px;
+  width: 70%;
+}
+#navbar{
+  display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 50px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 50px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a1a1a1; 
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(109, 109, 109); 
+  border-radius: 50px;
+}
+
+
+.chosen-container {
+  width: 100% !important; }
+  .chosen-container .chosen-choices {
+    border: 1.5px solid #3399ff !important;
+    padding: 5px 10px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    background-image: none !important;
+    line-height: 3;
+    border-radius: 10px; }
+  .chosen-container .chosen-drop {
+    margin-top: 2px;
+    border: 1px solid #3399ff;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-radius: 4px; }
+  .chosen-container .chosen-results li {
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    padding: 10px;
+    font-size: 14px; }
+    @media (prefers-reduced-motion: reduce) {
+      .chosen-container .chosen-results li {
+        -webkit-transition: none !important;
+        -o-transition: none !important;
+        transition: none !important; } }
+    .chosen-container .chosen-results li.highlighted {
+      background-image: none !important;
+      background: #3399ff !important; }
+    .chosen-container .chosen-results li.group-result {
+      padding-top: 15px !important;
+      padding-bottom: 15px !important;
+      font-size: 17px !important;
+      background: rgba(0, 0, 0, 0.05) !important; }
+
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  font-size: 14px; }
+
+.chosen-container-multi .chosen-choices li.search-choice {
+  border: none !important;
+  padding: 10px 25px 10px 10px !important;
+  background: #ebebeb !important;
+  background-image: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border-radius: 2px !important;
+  font-size: 14px !important; }
+  .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+    top: 11px;
+    right: 8px; }
+
+
+
+    #adddrug{
+      font-family: "Lato", sans-serif;
+      background-color: transparent;
+      color: #3399ff;
+      font-weight: 700;
+      border-radius: 7px;
+      border: solid ;
+      border-width: 2px;
+      border-color: #3399ff;
+
+    }
+
+    
+/* ========================= Tablet Design ========================= */
+
+@media only screen and (max-width: 800px){
+
+  #navbar{
+    display: initial;
+  }
+
+
+  .logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    display: none;
+  }
+
+  .dashboard,.appointments,.patients,.consultations,.drugs,.prescriptions,.bills,.profile,.logout,hr{
+    display: none;
+  }
+
+  #navbarNavAltMarkup{
+    text-align: center;
+  }
+
+  #row-hidden{
+    display: none;
+  }
+
+
+}
+
+/* ========================= Phone Design ========================= */
+
+@media only screen and (max-width: 450px){
+
+  #Page-title{
+    visibility: hidden;
+  }
+
+  .logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .dashboard{
+    margin-top: 0px;
+    margin-left: 100px;
+  }
+  .appointments{
+    margin-left: 76px;
+  }
+  .patients{
+    margin-left: 115px;
+  }
+
+  .consultations{
+    margin-left: 85px;
+  }
+
+  .drugs{
+    margin-left: 130px;
+  }
+
+  .prescriptions{
+    margin-left: 90px;
+  }
+
+  .bills{
+    margin-left: 140px;
+  }
+
+  #row{
+    display: none;
+  }
+
+}
+
+
+.chosen-container {
+  width: 100% !important; }
+  .chosen-container .chosen-choices {
+    border: 1.5px solid #3399ff !important;
+    padding: 5px 10px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    background-image: none !important;
+    line-height: 3;
+    border-radius: 10px; }
+  .chosen-container .chosen-drop {
+    margin-top: 2px;
+    border: 1px solid #3399ff;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-radius: 4px; }
+  .chosen-container .chosen-results li {
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    padding: 10px;
+    font-size: 14px; }
+    @media (prefers-reduced-motion: reduce) {
+      .chosen-container .chosen-results li {
+        -webkit-transition: none !important;
+        -o-transition: none !important;
+        transition: none !important; } }
+    .chosen-container .chosen-results li.highlighted {
+      background-image: none !important;
+      background: #3399ff !important; }
+    .chosen-container .chosen-results li.group-result {
+      padding-top: 15px !important;
+      padding-bottom: 15px !important;
+      font-size: 17px !important;
+      background: rgba(0, 0, 0, 0.05) !important; }
+
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  font-size: 14px; }
+
+.chosen-container-multi .chosen-choices li.search-choice {
+  border: none !important;
+  padding: 10px 25px 10px 10px !important;
+  background: #ebebeb !important;
+  background-image: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border-radius: 2px !important;
+  font-size: 14px !important; }
+  .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+    top: 11px;
+    right: 8px; }

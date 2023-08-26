@@ -1,0 +1,225 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+                <div class="col-xl-10"
+                    style="background-color: #fafafa; height:max-content; background-image: url('{% static 'img/patient_form/01.png' %}');">
+
+                    <div class="container px-lg-5">
+                        <div class="row mx-lg-5 px-lg-5">
+                            <div class="col mx-lg-5 px-lg-5">
+
+
+
+                                <!-- === Modal Body === -->
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <!-- ///// Logo ROW /////-->
+                                        <div class="col pt-4 d-flex justify-content-center">
+                                            <img src="{% static 'img/patient_form/consultation-01.svg' %}" alt="logo" style="width:50%;">
+                                        </div>
+                                    </div>
+
+                                    <hr style="margin-top: 45px;"> <!-- ///// line /////-->
+
+                                    <div class="row px-3">
+                                        <!-- ///// patient infos. ROW /////-->
+                                        <div class="col">
+                                            Date: {{consultation_data.added_date}}<br> <br>
+                                            Patient Name: {{patient.fname}} {{patient.lname}}  <br>
+                                            Sex: 🌈 <br>
+                                            Age: {{patient.age}}<br>
+                                            Patient file No. {{consultation_data.patient.patient_id}}<br>
+                                            Consultation No. {{consultation_data.id}}<br>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div style="margin-bottom: 10px;">- Patient Complains:</div>
+                                                <p style="font-size: 15px;">{{consultation_data.reason}}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <div style="margin-bottom: 10px;">- Patient Examination:</div>
+                                                <p style="font-size: 15px;">{{consultation_data.examine}}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <div style="margin-bottom: 10px;">- Conclusion:</div>
+                                                <p style="font-size: 15px;">{{consultation_data.conclusion}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row my-4">
+                                            <div class="col d-flex justify-content-center">
+                                                <input onClick="change()" value="Show Prescription .."
+                                                    class="btn btn-primary" id="show-prescription" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#prescription-view"
+                                                    aria-expanded="false" aria-controls="prescription-view"
+                                                    style="border: none;">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container-fluid collapse" id="prescription-view">
+                                        <div class="row px-3">
+                                            <div class="col-2">
+                                                <p>Drug name</p>
+                                            </div>
+                                            <div class="col">
+                                                <p>Dosage</p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p>Timing</p>
+                                            </div>
+                                            <div class="col">
+                                                <p>Morning</p>
+                                            </div>
+                                            <div class="col">
+                                                <p>Noon</p>
+                                            </div>
+                                            <div class="col">
+                                                <p>Night</p>
+                                            </div>
+                                            <div class="col">
+                                                <p>Duration</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row px-3">
+                                            <div class="col-2">
+                                                Doliprane
+                                            </div>
+                                            <div class="col">
+                                                100mg
+                                            </div>
+                                            <div class="col-2">
+                                                After meal
+                                            </div>
+                                            <div class="col">
+                                                01
+                                            </div>
+                                            <div class="col">
+                                                00
+                                            </div>
+                                            <div class="col">
+                                                02
+                                            </div>
+                                            <div class="col">
+                                                05 Days
+                                            </div>
+                                        </div>
+
+                                        <div class="row px-3">
+                                            <div class="col-2">
+                                                Grippex
+                                            </div>
+                                            <div class="col">
+                                                500mg
+                                            </div>
+                                            <div class="col-2">
+                                                During meal
+                                            </div>
+                                            <div class="col">
+                                                02
+                                            </div>
+                                            <div class="col">
+                                                00
+                                            </div>
+                                            <div class="col">
+                                                00
+                                            </div>
+                                            <div class="col">
+                                                10 Days
+                                            </div>
+                                        </div>
+
+                                        <div class="row px-3">
+                                            <div class="col-2">
+                                                Lactofibre
+                                            </div>
+                                            <div class="col">
+                                                250mg
+                                            </div>
+                                            <div class="col-2">
+                                                Before meal
+                                            </div>
+                                            <div class="col">
+                                                00
+                                            </div>
+                                            <div class="col">
+                                                01
+                                            </div>
+                                            <div class="col">
+                                                01
+                                            </div>
+                                            <div class="col">
+                                                25 Days
+                                            </div>
+                                        </div>
+
+                                        <div class="row px-3 mt-5">
+                                            <div class="col-2">
+                                                <p>Note</p>
+                                            </div>
+                                        </div>
+                                        <div class="row px-3">
+                                            <div class="col">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum
+                                                accumsan vulputate. Vivamus
+                                                sed consectetur erat, sed auctor dolor. Praesent convallis ornare ex,
+                                                quis vestibulum mauris porta at.
+                                                Etiam tempus ipsum eros, sit amet maximus mi sodales a. Maecenas pretium
+                                                nunc leo, et blandit mi
+                                                sodales at. Quisque aliquam arcu ligula, sit amet pretium lorem pulvinar
+                                                vel. Proin et finibus sapien.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="row px-3">
+                                        <div class="col">
+                                            Doctor name: <br>
+                                        </div>
+                                        <div class="col ps-5">
+                                            Signature.
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="modal-footer text-center">
+                                    <button id="adddrug" class="btn btn-primary w-100" type="button">Print</button>
+                                </div>
+
+                                <div class="col  pb-4 d-flex justify-content-center">
+                                    <button id="back" class="btn btn-secondary" type="button" style="width: 20%;">⮌
+                                        Back</button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+{% endblock  %}

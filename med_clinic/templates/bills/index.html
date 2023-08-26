@@ -1,0 +1,430 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Bills {% endblock  %}
+
+
+{% block content %}
+
+        <!--Container-->
+        <div class="container-fluid">
+          <div class="row py-5">
+            <div class="col py-3 px-5">
+              <h1 id="Page-title">Bills</h1>
+              <!--Drugs Title-->
+            </div>
+          </div>
+          <div class="row px-5">
+
+            <!--New Patient Button-->
+            <div class="col-5">
+
+              <button type="submit" class="btn btn-primary btn-md" id="Add-btn" data-bs-target="#newdrugpopup"
+                data-bs-toggle="modal" data-bs-dismiss="modal">New Bill</button>
+
+            </div>
+            <!--End New Patient Button-->
+
+            <!--Search bar-->
+            <div class="col d-flex justify-content-end">
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="user-input">
+                <button class="btn btn" type="submit" id="Search-btn">Search</button>
+              </form>
+            </div>
+          </div>
+          <!--End Search bar-->
+
+          <div class="row px-5 py-5" id="replaceable-content">
+            <!--row-->
+
+            <!--Drugs List-->
+            {% include 'partials/bills_search.html' %}
+          </div>
+          <!--End row-->
+
+        </div>
+        <!--End Container-->
+
+
+
+      </div>
+    </div>
+
+    <div class="modal fade" id="newdrugpopup" aria-hidden="true" aria-labelledby="newdrugpopuplabel" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+
+          <!-- === Modal Header === -->
+          <div class="modal-header text-center shadow mb-3" id="modalheader">
+            <h5 class="modal-title w-100" id="prescriptionlabel">Add Bill</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <!-- === End Modal Header === -->
+
+          <!-- === Modal Body === -->
+          <div class="modal-body">
+
+            <div class="container" id="prescription-form">
+
+              <form action="{% url 'bills:add_bill' %}" method='post'>
+                {% csrf_token %}
+                <div class="row py-2">
+                  <div class="col">
+                    <select class="form-select form-select-lg" aria-label=".form-select-lg" id="patients-droplist"
+                      name="doctor1">
+                      <option selected>Select Doctor .. </option> <!-- ///// Doctors list /////-->
+                      {% for doctor in doctors_list %}
+                      <option value="{{doctor.doctor_id}}">{{doctor}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row py-2">
+                  <div class="col">
+                    <select class="form-select form-select-lg" aria-label=".form-select-lg" id="secretary-droplist"
+                      name="secretary1">
+                      <option selected>Select Secretary .. </option> <!-- ///// Doctors list /////-->
+                      {% for secretary in secretaries_list %}
+                      <option value="{{secretary.secretary_id}}">{{secretary}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                </div>
+
+
+                <div class="row py-2">
+                  <div class="col">
+                    <select class="form-select form-select-lg" aria-label=".form-select-lg" id="patients-droplist"
+                      name="patient1">
+                      <option selected>Select patient .. </option> <!-- ///// Patients list /////-->
+                      {% for patient in patients_list %}
+                      <option value="{{patient.patient_id}}">{{patient}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                </div>
+
+                <hr>
+
+
+                <div class="row pt-3">
+                  <div>Bill</div>
+                  <div class="col mb-4 d-flex justify-content-center">
+                    <button id="adddrug" class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseDrugs" aria-expanded="false" aria-controls="collapseDrugs">
+                      Add Bill
+                    </button>
+                  </div>
+                </div>
+                <div class="collapse" id="collapseDrugs">
+                <input name="services_count" type="hidden" value="1">
+                  <ul style="list-style: none; margin: 0; padding: 0px !important;">
+                    <div>
+                      <li id="service-list-item">
+                        <div class="row justify-content-center">
+
+                          <div class="col-4">
+                            <label for="service">Service</label>
+                            <input class="form-control" list="serviceDataList" id="service-DataList"
+                              placeholder="Service .." name="service1">
+                            <datalist id="serviceDataList">
+                              <option value="Regular Consultation">
+                              <option value="Annual Physical Exam">
+                              <option value="Blood Test">
+                              <option value="Urine Test">
+                            </datalist>
+                          </div>
+
+                          <div class="col-2">
+                            <label for="unit-price">Unit Price</label>
+                            <div class="input-group mb-3" id="unit-price">
+
+                              <input name="unit_price1" id="unit-price1" type="text" class="form-control"
+                                aria-label="unit-price" placeholder="0.00" required>
+                              <span class="input-group-text">DZD</span>
+                            </div>
+                          </div>
+
+
+
+                          <div class="col-2" id="qte">
+                            <label>Qte</label>
+                            <input class="form-control" type="number" placeholder="0" name="qte1" id="qte1" required>
+                          </div>
+                          <div class="col-2" id="discount">
+                            <label>Discount</label>
+                            <div class="input-group mb-3">
+                              <input class="form-control" type="number" placeholder="0" name="discount1" id="discount1"
+                                required>
+                              <span class="input-group-text">%</span>
+                            </div>
+                          </div>
+
+                          <div class="col">
+
+                              <button id="tick-btn1" class="btn btn-success" type="button" onclick="calc(); tot();" style="margin-top: 36px; margin-left: 10px;">✓</button>
+                          </div>
+
+
+
+                        </div>
+
+                        <!--Hidden input-->
+                        <input type="text" id="subtotal1" name="subtotal1" style="display: none;" />
+                        <!--Hidden input-->
+
+                      </li>
+                    </div>
+                    <div id="newRow"></div>
+
+                    <div class="row">
+                      <div class="col ms-2 my-3">
+                        <h5 id="total" >Total: </h5>
+                        <input type="hidden" id="total1" name="total"/>
+                      </div>
+                    </div>
+
+                    <div class="row ps-2">
+                      <button id="addRow" type="button" class="btn btn-success"
+                        style="margin-top: 15px; width: 14%; border-radius: 8px;">+ Add</button>
+
+                      <button type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse"
+                        data-bs-target="#noteCollapse" aria-expanded="false" aria-controls="noteCollapse"
+                        style="margin-top: 15px; margin-left: 20px; width: 14%; border-radius: 8px;">✎ Write note
+                        ..</button>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="collapse" id="noteCollapse">
+                          <textarea class="form-control" id="note-textarea" rows="5" name="note"
+                            placeholder="Type here .."></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </ul>
+
+                  <div class="row">
+                    <div class="col d-flex justify-content-center py-3">
+                      <button class="btn btn-primary btn-lg" type="submit" id="create-profile-btn">Save
+                        Bill</button>
+
+
+
+
+                    </div>
+                  </div>
+
+
+                </div>
+
+              </form>
+
+
+
+
+            </div>
+
+
+
+
+
+          </div>
+
+          <!-- === End Modal Body === -->
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="modal fade" id="bills-view" aria-hidden="true" aria-labelledby="newdrugpopuplabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+          <!-- === Modal Header === -->
+          <div class="modal-header text-center shadow mb-3" id="modalheader">
+          </div>
+          <div class="modal-body">
+
+          </div>
+          <div class="modal-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock  %}
+
+{% block custom_js %}
+
+
+    <script type="text/javascript">
+      // add row
+      var currentItem = 1;
+
+      $("#addRow").click(function () {
+        currentItem++;
+        var html = '';
+        html += '<input name="services_count" type="hidden" value=" '+currentItem+' ">';
+        html += '<li id="service-list-item">';
+        html += '<div class="row justify-content-center">';
+        html += '<div class="col-4">';
+        html += '<input class="form-control" list="serviceDataList" id="service-DataList" placeholder="Service .." name="service' + currentItem + '" id="unit-price' + currentItem + '">';
+        html += '<datalist id="serviceDataList">';
+        html += '<option value="Regular Consultation">';
+        html += '<option value="Annual Physical Exam">';
+        html += '<option value="Blood Test">';
+        html += '<option value="Urine Test">';
+        html += '</datalist>';
+        html += '</div>';
+        html += '<div class="col-2">';
+        html += '<div class="input-group mb-3" id="unit-price">';
+        html += '<input name="unit_price' + currentItem + '" id="unit-price' + currentItem + '" type="text" class="form-control" aria-label="unit-price" placeholder="0.00">';
+        html += '<span class="input-group-text">DZD</span>';
+        html += '</div>';
+        html += '</div>';
+        html += '<div class="col-2" id="qte">';
+        html += '<input class="form-control" type="number" placeholder="0" name="qte' + currentItem + '" id="qte' + currentItem + '">';
+        html += '</div>';
+        html += '<div class="col-2">';
+        html += '<div class="input-group mb-3" id="discount">';
+        html += '<input class="form-control" type="number" placeholder="0" name="discount' + currentItem + '" id="discount' + currentItem + '">';
+        html += '<span class="input-group-text">%</span>';
+        html += '</div>';
+        html += '</div>';
+        html += '<div class="col">';
+        html += '<button id="tick-btn'+currentItem+'" class="btn btn-success" type="button" onclick="calc(); tot();">✓</button>'
+        html += '</div>';
+        html += '</div>';
+        html += '<input type="text" id="subtotal' + currentItem + '" name="subtotal' + currentItem + '" style="display: none;"/>';
+        html += '</li>';
+
+
+
+
+
+
+
+
+
+        $('#newRow').append(html);
+
+      });
+
+      // remove row
+      $(document).on('click', '#removeRow', function () {
+        $(this).closest('#service-list-item').remove();
+        document.getElementById('subtotal' + currentItem + '').remove;
+
+
+      });
+
+      function calc() {
+
+        var unit_price = document.getElementById('unit-price' + currentItem + '').value;
+        var qte = document.getElementById('qte' + currentItem + '').value;
+        var disc = document.getElementById('discount' + currentItem + '').value;
+
+
+
+
+
+        document.getElementById('subtotal' + currentItem + '').value = (unit_price * qte) - ((unit_price * qte * disc) / 100);
+        document.getElementById('tick-btn' + currentItem + '').remove();
+
+
+
+
+        //total
+
+
+
+
+
+
+        //document.getElementById('total').value = total;
+
+
+
+
+
+      }
+
+      function tot() {
+        var arr = [];
+
+
+        for (var index = 1; index <= currentItem; index++) {
+
+          arr.push(document.getElementById('subtotal' + index + '').value);
+
+        }
+
+
+
+        var total1 = arr.reduce(function (a, b) {
+          return (+a) + (+b);
+        }, 0);
+
+
+
+        document.getElementById('total').innerHTML ="Total: "+total1;
+        document.getElementById('total1').value = total1;
+
+
+      }
+
+    </script>
+    <script>
+const user_input= $("#user-input")
+const search_icon = $('#Search-btn')
+const artists_div = $('#replaceable-content')
+const endpoint = '/consultations/'
+const delay_by_in_ms = 300
+let scheduled_function = false
+
+let ajax_call = function (endpoint, request_parameters) {
+    $.getJSON(endpoint, request_parameters)
+        .done(response => {
+            // fade out the artists_div, then:
+            artists_div.fadeTo('slow', 0).promise().then(() => {
+                // replace the HTML contents
+                artists_div.html(response['html_from_view'])
+                // fade-in the div with new contents
+                artists_div.fadeTo('slow', 1)
+                // stop animating search icon
+                search_icon.removeClass('blink')
+            })
+        })
+}
+
+
+user_input.on('keyup', function () {
+
+    const request_parameters = {
+        q: $(this).val(),// value of user_input: the HTML element with ID user-input
+    }
+
+
+    // start animating the search icon with the CSS class
+    search_icon.addClass('blink')
+
+    // if scheduled_function is NOT false, cancel the execution of the function
+    if (scheduled_function) {
+        clearTimeout(scheduled_function)
+    }
+
+    // setTimeout returns the ID of the function to be executed
+    scheduled_function = setTimeout(ajax_call, delay_by_in_ms, endpoint, request_parameters)
+})
+</script>
+{% endblock  %}

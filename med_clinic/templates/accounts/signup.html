@@ -1,0 +1,17 @@
+{% load static %}
+
+
+<main class="form-signin">
+  <form action={% url 'accounts:signup' %} method="post">
+  {% csrf_token %}
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    {{ form }}
+    <br>
+  <input type="radio" id="doctor" name="type" value="doctor">
+  <label for="male">Doctor</label><br>
+  <input type="radio" id="secretary" name="type" value="secretary">
+  <label for="secretary">Secretary</label><br>    
+  <input type="submit" value="Signup">
+  </form>
+  <h2>{{error_msg}}</h2>
+</main>

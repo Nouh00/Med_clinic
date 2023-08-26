@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-xl-10"
+                    style="background-color: #fafafa; height:max-content; background-image: url({% static 'img/patient_form/01.png' %});">
+
+                    <div class="container px-lg-5">
+                        <div class="row mx-lg-5 px-lg-5">
+                            <div class="col mx-lg-5 px-lg-5">
+
+
+
+                                <!-- === Modal Body === -->
+                                <div class="modal-body">
+                                    <div class="row mt-4">
+                                        <div class="col pt-2 d-flex justify-content-center">
+                                            <img src="{% static 'img/patient_form/bill-01.svg' %}" alt="logo" style="width:25%;">
+                                        </div>
+                                    </div>
+                                    <hr style="margin-top: 43px; display: block;">
+                                    <div class="row px-3">
+                                        <div class="col">
+                                            Date: {{bill_data.doc_date}}<br> <br>
+                                            Patient ID: {{bill_data.patient.patient_id}} <br>
+                                            Patient Name: {{patient_data.fname}} {{patient_data.lname}}<br>
+                                            Phone: {{patient_data.phone}} <br>
+                                            Email: {{patient_data.email}} <br>
+                                            Address: {{patient_data.adresse}}<br>
+                                        </div>
+                                    </div>
+
+                                    <hr style="display: block;">
+
+                                    <div class="container">
+                                        <div class="row px-3">
+                                            <div class="col-4">
+                                                <p>Service</p>
+                                            </div>
+                                            <div class="col">
+                                                <p>Qte</p>
+                                            </div>
+                                            <div class="col-3">
+                                                <p>Unit Price</p>
+                                            </div>
+                                            <div class="col">
+                                                <p>Discount</p>
+                                            </div>
+                                            <div class="col">
+                                                <p>Subtotal</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row px-3">
+                                            <div class="col-4">
+                                            {% for key, value in services.items %}
+                                                    {{ value.service1 }} 
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col">
+                                            {% for key, value in services.items %}
+                                                    {{ value.qte1 }}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col-3">
+                                            {% for key, value in services.items %}
+                                                    {{ value.unit_price1 }}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col">
+                                            {% for key, value in services.items %}
+                                                {{value.discount1}}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col">
+                                            {% for key, value in services.items %}
+                                                {{value.subtotal1}}
+                                            {% endfor %}
+                                            </div>
+                                        </div>
+
+                                        <div class="row px-3">
+                                            <div class="col-4">
+                                            {% for key, value in services.items %}
+                                                    {{ value.service2 }}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col">
+                                            {% for key, value in services.items %}
+                                                    {{ value.qte2 }}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col-3">
+                                            {% for key, value in services.items %}
+                                                    {{ value.unit_price2 }}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col">
+                                            {% for key, value in services.items %}
+                                                {{value.discount2}}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col">
+                                            {% for key, value in services.items %}
+                                                {{value.subtotal2}}
+                                            {% endfor %}
+                                            </div>
+                                        </div>
+
+                                        <div class="row px-3">
+                                            <div class="col-4">
+                                            {% for key, value in services.items %}
+                                                    {{ value.service3 }}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col">
+                                            {% for key, value in services.items %}
+                                                    {{ value.qte3 }}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col-3">
+                                            {% for key, value in services.items %}
+                                                    {{ value.unit_price3 }}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col">
+                                            {% for key, value in services.items %}
+                                                {{value.discount3}}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col">
+                                            {% for key, value in services.items %}
+                                                {{value.subtotal3}}
+                                            {% endfor %}
+                                            </div>
+                                        </div>
+
+                                        <div class="row px-3">
+                                            <div class="col-4">
+                                            {% for key, value in services.items %}
+                                                    {{ value.service4 }}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col">
+                                            {% for key, value in services.items %}
+                                                    {{ value.qte4 }}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col-3">
+                                            {% for key, value in services.items %}
+                                                    {{ value.unit_price4 }}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col">
+                                            {% for key, value in services.items %}
+                                                {{value.discount4}}
+                                            {% endfor %}
+                                            </div>
+                                            <div class="col">
+                                            {% for key, value in services.items %}
+                                                {{value.subtotal4}}
+                                            {% endfor %}
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-5 justify-content-end">
+                                            <hr style="text-align: right; width: 20%;">
+                                        </div>
+
+                                        <div class="row mt-2 justify-content-end">
+                                            TOTAL: {{bill_data.total}} DZD
+                                        </div>
+
+
+                                        <div class="row px-3 mt-5">
+                                            <div class="col-2">
+                                                <p>Note</p>
+                                            </div>
+                                        </div>
+                                        <div class="row px-3">
+                                            <div class="col pb-2">
+                                                {{bill_data.note}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr style="display: block;">
+
+                                    <div class="row px-3">
+                                        <div class="col">
+                                            Doctor name: <br>
+                                        </div>
+                                        <div class="col ps-5">
+                                            Signature.
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer text-center">
+                                        <button id="adddrug" class="btn btn-primary w-100" type="button">Print</button>
+                                    </div>
+
+                                    <div class="col d-flex justify-content-center">
+                                        <a href="{% url 'bills:bills' %}"> <button id="back" class="btn btn-secondary" type="button" style="width: 100%;">⮌ Back</button>
+                                        </a>
+
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+{% endblock  %}

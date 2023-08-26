@@ -1,0 +1,53 @@
+{% extends 'accounts/profiles/base_profile.html' %}
+{% load static %}
+
+
+{% block title %}
+Patient Profile
+{% endblock  %}
+
+
+{% block content %}
+
+                <hr style="width:30%; height: 2px; color: #3399ff;">
+
+              </div><!--End 1st row-->
+
+              <div class="row py-3"> <!--2nd row-->
+
+                
+                <div class="col d-flex justify-content-start px-5" id="fname"> <!--1st col-->
+                  First name: <span> {{fname}}</span>
+                </div>
+
+                <div class="col d-flex justify-content-start" id="lname"> <!--2nd col-->
+                  Last name: <span>{{lname}}</span>
+                </div>
+
+              </div> <!--End 2nd row-->
+
+              <div class="row py-3"> <!--3rd row-->
+
+                <div class="col d-flex justify-content-start px-5" id="bdate"> <!--1st col-->
+                  Birth date: <span>{{birth}}</span>
+                </div>
+
+                <div class="col d-flex justify-content-start" id="age"> <!--2nd col-->
+                  Age: <span>{{age}}</span>
+                </div>
+
+              </div> <!--End 3rd row-->
+
+              <div class="row py-3"> <!--4th row-->
+
+                <div class="col d-flex justify-content-start px-5" id="phonenum"> <!--1st col-->
+                  Phone number: <span> {{phone}}</span>
+                </div>
+
+                <div class="col d-flex justify-content-start" id="adresse"> <!--2nd col-->
+                  Adresse: <span>{{adresse}}</span>
+                </div>
+
+              </div> <!--End 4th row-->
+
+{% endblock  %}

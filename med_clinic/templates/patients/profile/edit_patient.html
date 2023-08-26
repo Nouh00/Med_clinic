@@ -1,0 +1,64 @@
+{% extends 'accounts/profiles/base_profile.html' %}
+{% load static %}
+
+
+{% block title %}
+Edit Patient Profile
+{% endblock  %}
+
+{% block content %}
+
+<div class="container">
+                  <!--rightside main container-->
+                  <div class="row">
+                    <!--rightside main row-->
+                    <div class="col px-4">
+                      <!--rightside main Col-->
+
+                      <form action="" method='POST'>
+                        {% csrf_token %}
+                        <div class="row py-1">
+                          <!--First name-->
+                          {{patient_form.fname}}
+                        </div>
+
+                        <div class="row py-1">
+                          <!--Last name-->
+                          {{patient_form.lname}}
+                        </div>
+
+                        <div class="row py-1">
+                          <!--Birth date-->
+                          {{patient_form.birth}} 
+                        </div>
+
+                        <div class="row py-1">
+                          <!--Mail-->
+                          {{patient_form.email}}
+                        </div>
+                        
+                        <div class="row py-1">
+                          <!--Phone num-->
+                          {{patient_form.phone}}
+                        </div>
+                        <div class="row py-1">
+                          <!--Adresse-->
+                          {{patient_form.adresse}}
+                        </div>
+
+                        <div class="row py-1">
+                          <div class="col d-flex justify-content-center py-3">
+                            <button class="btn btn-primary btn-lg" type="submit" id="create-profile-btn">Save</button>
+                          </div>
+                        </div>
+
+                      </form>
+
+                    </div>
+                    <!--End rightside main Col-->
+                  </div>
+                  <!--End rightside main row-->
+                </div>
+                <!--End rightside main container-->
+
+{% endblock  %}

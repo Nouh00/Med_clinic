@@ -1,0 +1,32 @@
+{% extends 'appointments\book_appointment\base_book.html' %}
+
+{% load static %}
+
+
+
+
+{% block content %}
+<div class="col-xl-12" style="background-color: #fafafa; height: 100vh;">
+  <div class="d-flex justify-content-center">
+    <img class="success-img" src="{% static 'img/appointment_form/tick.png' %}" alt="appointment-img">
+  </div>
+  <div class="d-flex justify-content-center">
+    <h2>Your request has been<br>submitted successfully!</h2>
+  </div>
+  {% if request.user.is_stuff %}
+  <form action="{% url 'appointments:appointments' %}" method='post'>
+  {% csrf_token %}
+  <button class="btn btn-primary btn-lg px-1" type="submit">Back To Appointments List</button>
+</form>
+{% else %}
+<form action="{% url 'accounts:index' %}" method='post'>
+  {% csrf_token %}
+  <button class="btn btn-primary btn-lg px-1" type="submit">Back To Homepage</button>
+</form>
+{% endif %}
+
+</div>
+
+</div>
+</div>
+{% endblock %}

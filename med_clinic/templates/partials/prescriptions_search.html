@@ -1,0 +1,37 @@
+<ul class="list-group">
+{% if presc_list %}
+            {% for prescription in presc_list  %}
+              <!--Drugs item 01-->
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-md-3 py-2">{{prescription.prescription_id}}</div>
+                  <div class="col-md-3 py-2">{{prescription.patient.fname}} {{prescription.patient.lname}}</div>
+                  <div class="col-md-3 py-2">{{prescription.doc_date}}</div>
+
+                  
+
+
+                  <div class="col-md ">
+                  <form action="view_presc/{{prescription.prescription_id}}" method='post'>
+                  {% csrf_token %}
+                    <button type="submit" class="btn btn-primary btn-md" id="editdrug-btn">View</button>
+                  </form>
+                  </div>
+
+                  <div class="col-md">
+                    <form action="delete_prescription/{{  prescription.prescription_id }}" method='post'>
+                      {% csrf_token %}
+                      <button type="submit" class="btn btn-danger btn-md" id="deletedrug-btn">Delete</button>
+                    </form>
+                  </div>
+
+                </div>
+              </li>
+              <!--End Drugs item 01-->
+
+              <!--Add Drugs items Here!-->
+            {% endfor %}
+            {% else %}
+            <h3>No prescription found!</h3>
+            {% endif %}
+            </ul>

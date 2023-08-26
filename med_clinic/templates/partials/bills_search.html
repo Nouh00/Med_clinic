@@ -1,0 +1,35 @@
+<ul class="list-group">
+{% if bills_list %}
+              {% for bill in bills_list %}
+              <!--Drugs item 01-->
+              <li class="list-group-item">
+                <div class="row">
+
+                  <div class="col-md-2 py-2">{{bill.bill_id}}</div>
+                  <div class="col-md-4 py-2">{{bill.patient}}</div>
+                  <div class="col-md-2 py-2">{{bill.added_date}}</div>
+
+                  <div class="col-md d-flex justify-content-end">
+                    <form action="view_bill/{{bill.bill_id}}" method='post'>
+                    {% csrf_token %}
+                      <button type="submit" class="btn btn-primary btn-md" id="editdrug-btn">View</button>
+                    </form>
+                  </div>
+
+                  <div class="col-md">
+                    <form action="delete_bill/{{bill.bill_id}}" method='post'>
+                    {% csrf_token %}
+                      <button type="submit" class="btn btn-danger btn-md" id="deletedrug-btn">Delete</button>
+                    </form>
+                  </div>
+
+                </div>
+              </li>
+              <!--End Drugs item 01-->
+
+              <!--Add Drugs items Here!-->
+              {% endfor %}
+              {% else %}
+              <h3>No bills found!</h3>
+              {% endif %}
+            </ul>

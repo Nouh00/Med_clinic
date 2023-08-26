@@ -1,0 +1,152 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %} Dashboard {% endblock  %}
+
+{% block content %}
+<div class="container-fluid">
+          <div class="row py-5">
+            <div class="col py-3 px-5">
+              <h1 id="Page-title">Dashboard</h1>
+            </div>
+          </div>
+
+
+          <div class="container-fluid">
+            <div class="row align-items-center mb-5">
+
+              <div class="col-lg-4">
+                <div class="card mb-3 shadow-sm border-0" style="width: 25rem; border-radius: 12px;">
+                  <div class="card-body" style="padding: .3rem !important;">
+                    <div class="row align-items-center">
+                      <div class="col-3 ms-4 me-2 py-lg-2 py-3">
+                        <img src="{% static 'img/dashboard/icon-02.svg' %}" id="icon-1" alt="">
+                      </div>
+                      <div class="col-8">
+                        <h5 class="card-title" id="card-title1">
+                          Total Patients
+                        </h5>
+                        <p class="card-text" id="card-txt1">{{total_patients}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="card mb-3 shadow-sm border-0" style="width: 25rem; border-radius: 12px;">
+                  <div class="card-body" style="padding: .3rem !important;">
+                    <div class="row align-items-center">
+                      <div class="col-3 ms-4 me-2 py-lg-2 py-3">
+                        <img src="{% static 'img/dashboard/icon-03.svg' %}" id="icon-1" alt="">
+                      </div>
+                      <div class="col-8">
+                        <h5 class="card-title" id="card-title2">
+                          Total Consultations
+                        </h5>
+                        <p class="card-text" id="card-txt2">{{total_consult}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="card mb-3 shadow-sm border-0" style="width: 25rem; border-radius: 12px;">
+                  <div class="card-body" style="padding: .3rem !important;">
+                    <div class="row align-items-center">
+                      <div class="col-3 ms-4 me-2 py-lg-2 py-3">
+                        <img src="{% static 'img/dashboard/icon-04.svg' %}" id="icon-1" alt="">
+                      </div>
+                      <div class="col-8">
+                        <h5 class="card-title" id="card-title3">
+                          Total Prescriptions
+                        </h5>
+                        <p class="card-text" id="card-txt3">{{total_presc}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row align-items-center mb-3">
+              <div class="col-lg-4">
+                <div class="card mb-3 shadow-sm border-0" style="width: 25rem; border-radius: 12px;">
+                  <div class="card-body" style="padding: .3rem !important;">
+                    <div class="row align-items-center">
+                      <div class="col-3 ms-4 me-2 py-lg-2 py-3">
+                        <img src="{% static 'img/dashboard/icon-01.svg' %}" id="icon-1" alt="">
+                      </div>
+                      <div class="col-8">
+                        <h5 class="card-title" id="card-title4">
+                          Total Appointments
+                        </h5>
+                        <p class="card-text" id="card-txt4">{{total_appointments}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-4 ">
+                <div class="card mb-3 shadow-sm border-0" style="width: 9rem; border-radius: 12px;">
+                  <div class="card-body" style="padding: .65rem !important;">
+                    <h5 class="card-title text-center pt-2" id="card-title4">
+                      Approved
+                    </h5>
+                    <p class="card-text text-center" id="card-txt4">{{approved_appointments}}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-4">
+                <div class="card mb-3 shadow-sm border-0" style="width: 9rem; border-radius: 12px;">
+                  <div class="card-body" style="padding: .65rem !important;">
+                    <h5 class="card-title text-center pt-2" id="card-title5">
+                      Pending
+                    </h5>
+                    <p class="card-text text-center" id="card-txt5">{{pending_appointments}}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-4">
+                <div class="card mb-3 shadow-sm border-0" style="width: 9rem; border-radius: 12px;">
+                  <div class="card-body" style="padding: .65rem !important;">
+                    <h5 class="card-title text-center pt-2" id="card-title6">
+                      Today's
+                    </h5>
+                    <p class="card-text text-center" id="card-txt6">{{todays_appointments}}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-4">
+                <div class="card mb-3 shadow-sm border-0" style="width: 9rem; border-radius: 12px;">
+                  <div class="card-body" style="padding: .65rem !important;">
+                    <h5 class="card-title text-center pt-2" id="card-title7">
+                      This Week
+                    </h5>
+                    <p class="card-text text-center" id="card-txt7">0</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            
+
+            <div class="row align-items-center">
+
+              
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock  %}

@@ -1,0 +1,352 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+          <div class="row py-5">
+            <div class="col py-3 px-5">
+              <h1 id="Page-title">Prescriptions</h1>
+              <!--Drugs Title-->
+            </div>
+          </div>
+          <div class="row px-5">
+
+            <!--New Patient Button-->
+            <div class="col-5">
+              {% if user == "doctor" %}
+              <button type="submit" class="btn btn-primary btn-md" id="Add-btn" data-bs-target="#prescription-1"
+                data-bs-toggle="modal" data-bs-dismiss="modal">New Prescription</button>
+              {% endif %}
+            </div>
+            <!--End New Patient Button-->
+
+            <!--Search bar-->
+            <div class="col d-flex justify-content-end">
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="user-input">
+                <button class="btn btn" type="submit" id="Search-btn">Search</button>
+              </form>
+            </div>
+          </div>
+          <!--End Search bar-->
+
+          <div class="row px-5 py-5" id="replaceable-content">
+            <!--row-->
+
+            <!--Drugs List-->
+            {% include 'partials/prescriptions_search.html' %}
+          </div>
+          <!--End row-->
+
+        </div>
+        <!--End Container-->
+      </div>
+    </div>
+
+
+
+    <!-- *******************Prescription form *******************-->
+
+
+    <div class="modal animate__animated animate__fadeIn animate__fast" id="prescription-1" data-bs-backdrop="static"
+      data-bs-keyboard="false" aria-hidden="true" aria-labelledby="prescriptionlabel" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+
+          <!-- === Modal Header === -->
+          
+          <div class="modal-header text-center shadow mb-3" id="modalheader">
+            <h5 class="modal-title w-100" id="prescriptionlabel">Add prescription</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <!-- === End Modal Header === -->
+
+          <!-- === Modal Body === -->
+          <div class="modal-body">
+
+            <div class="container" id="prescription-form">
+
+              <form action="{% url 'prescriptions:add_prescription' %}" method='post'>
+                {% csrf_token %}
+                <div class="row py-2">
+                  <div class="col">
+                    <select class="form-select form-select-lg" aria-label=".form-select-lg" id="patients-droplist"
+                      name="doctor" required>
+                      <option selected>Select Doctor .. </option> <!-- ///// Patients list /////-->
+                      {% for doctor in doctors_list  %} <!-- ///// Patients list /////-->
+                      <option value="{{doctor.doctor_id}}">{{doctor}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                </div>
+
+
+                <div class="row py-2">
+                  <div class="col">
+                    <select class="form-select form-select-lg" aria-label=".form-select-lg" id="patients-droplist"
+                      name="patient" required>
+                      <option selected>Select patient .. </option>
+                      {% for patient in patients_list  %} <!-- ///// Patients list /////-->
+                      <option value="{{patient.patient_id}}">{{patient}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                </div>
+
+                <hr>
+
+
+                <div class="row pt-3">
+                  <div>Prescription</div>
+                  <div class="col mb-4 d-flex justify-content-center">
+                    <button id="adddrug" class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseDrugs" aria-expanded="false" aria-controls="collapseDrugs">
+                      Add prescription
+                    </button>
+                  </div>
+                </div>
+                <div class="collapse" id="collapseDrugs">
+                  
+                    <ul style="list-style: none; margin: 0; padding: 0px !important;">
+                      <div>
+                        <li id="drug-list-item">
+                          <div class="row justify-content-center">
+                            <div class="col-2">
+                              <label for="drugs">Drug name</label>
+                              <input class="form-control" list="drugsDataList" id="drugs-DataList"
+                                placeholder="Drug name .." name="drug1">
+                              <datalist id="drugsDataList">
+                              {% for drug in drugs_list %}
+                                <option value="{{drug.name}}">
+                                {% endfor %}
+                              </datalist>
+                            </div>
+
+                            <div class="col-2">
+                              <label for="dosage">Dosage</label>
+                              <div class="input-group mb-3" id="dosage">
+
+                                <input name="dosage1" type="text" class="form-control" aria-label="dosage">
+                                <input name="drugs_count" type="hidden" value="1">
+                                <span class="input-group-text">mg</span>
+                              </div>
+                            </div>
+
+                            <div class="col">
+                              <label>When?</label>
+                              <select class="form-select form-select-md" aria-label=".form-select-md" id="when-droplist"
+                                name="time1" required>
+                                <option selected>--</option>
+                                <option value="before">Before meal</option>
+                                <option value="after">After meal</option>
+                                <option value="while">During meal</option>
+                              </select>
+                            </div>
+
+                            <div class="col-1" id="morning">
+                              <label>Morning</label>
+                              <input class="form-control" type="number" placeholder="0" name="morning1">
+                            </div>
+                            <div class="col-1" id="noon">
+                              <label>Noon</label>
+                              <input class="form-control" type="number" placeholder="0" name="noon1">
+                            </div>
+                            <div class="col-1" id="night">
+                              <label>Night</label>
+                              <input class="form-control" type="number" placeholder="0" name="night1">
+                            </div>
+
+                            <div class="col-2" id="duration">
+                              <label>Duration</label>
+                              <div class="input-group mb-3">
+                                <input type="number" class="form-control" aria-label="duration" placeholder="0"
+                                  name="duration1">
+                                <span class="input-group-text">Days</span>
+                              </div>
+                            </div>
+
+                            <div class="col">
+                              <button id="removeRow" type="button" class="btn btn-danger"
+                                style="margin-top: 36px;">x</button>
+                            </div>
+
+                          </div>
+
+                        </li>
+                      </div>
+                      <div id="newRow"></div>
+
+                      <div class="row ps-2">
+                        <button id="addRow" type="button" class="btn btn-success"
+                          style="margin-top: 15px; width: 12%; border-radius: 8px;">+ Add Drug ..</button>
+
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse"
+                          data-bs-target="#noteCollapse" aria-expanded="false" aria-controls="noteCollapse"
+                          style="margin-top: 15px; margin-left: 20px; width: 12%; border-radius: 8px;">✎ Write note
+                          ..</button>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="collapse" id="noteCollapse">
+                            <textarea class="form-control" id="note-textarea" rows="5" name="note"
+                              placeholder="Type here .." required></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </ul>
+
+                    <div class="row">
+                      <div class="col d-flex justify-content-center py-3">
+                        <button class="btn btn-primary btn-lg" type="submit" id="create-profile-btn">Save
+                          Consultation</button>
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+
+            </div>
+
+
+
+
+          </div>
+          <!--End Form-->
+
+        </div>
+        <!-- === End Modal Body === -->
+
+      </div>
+    </div>
+
+
+{% endblock  %}
+
+{% block custom_js %}
+
+   
+  <script type="text/javascript">
+    // add row
+    var currentItem =1;
+
+    $("#addRow").click(function () {
+      
+      
+      currentItem++;
+      var html = '';
+      html += '<li id="drug-list-item">';
+      html += '<div class="row justify-content-center">';
+      html += '<div class="col-2">';
+      html += '<input class="form-control" list="drugsDataList" id="drugs-DataList" placeholder="Drug name .." name="drug' +currentItem+ '">';
+      html += '<datalist id="drugsDataList">';
+      html += '<option value="Grippex">';
+      html += '<option value="Romafed">';
+      html += '<option value="Paracetamol">';
+      html += '<option value="Doliprane">';
+      html += '<option value="3afssa w5lass">';
+      html += '</datalist>';
+      html += '</div>';
+      html += '<div class="col-2">';
+      html += '<div class="input-group mb-3" id="dosage">';
+      html += '<input name="dosage' +currentItem+ '" type="text" class="form-control" aria-label="dosage">';
+      html += '<span class="input-group-text">mg</span>';
+      html += '</div>';
+      html += '</div>';
+      html += '<div class="col">';
+      html += '<select class="form-select form-select-md" aria-label=".form-select-md" id="when-droplist" name="time' +currentItem+ '">';
+      html += '<option selected>--</option>';
+      html += '<option value="before">Before meal</option>';
+      html += '<option value="after">After meal</option>';
+      html += '<option value="while">During meal</option>';
+      html += '</select>';
+      html += '</div>';
+      html += '<div class="col-1" id="morning">';
+      html += '<input class="form-control" type="number" placeholder="0" name="morning' +currentItem+ '">';
+      html += '</div>';
+      html += '<div class="col-1" id="noon">';
+      html += '<input class="form-control" type="number" placeholder="0" name="noon' +currentItem+ '">';
+      html += '</div>';
+      html += '<div class="col-1" id="night">';
+      html += '<input class="form-control" type="number" placeholder="0" name="night' +currentItem+ '">';
+      html += '</div>';
+      html += '<div class="col-2" id="duration">';
+      html += '<div class="input-group mb-3">';
+      html += '<input type="number" class="form-control" aria-label="duration" placeholder="0" name="duration' +currentItem+ '">';
+      html += '<input name="drugs_count" type="hidden" value=" '+currentItem+' ">';
+      html += '<span class="input-group-text">Days</span>';
+      html += '</div>';
+      html += '</div>';
+      html += '<div class="col">';
+      html += '<button id="removeRow" type="button" class="btn btn-danger">x</button>';
+      html += '</div>';
+      html += '</div>';
+      html += '</li>';
+      
+      
+
+
+
+
+      $('#newRow').append(html);
+    });
+
+    // remove row
+    $(document).on('click', '#removeRow', function () {
+      $(this).closest('#drug-list-item').remove();
+    });
+
+
+    function setEventId(event_id){
+    document.querySelector("#event_id").innerHTML = event_id;
+}
+  </script>
+
+
+
+
+<script>
+const user_input= $("#user-input")
+const search_icon = $('#Search-btn')
+const artists_div = $('#replaceable-content')
+const endpoint = '/prescriptions/'
+const delay_by_in_ms = 300
+let scheduled_function = false
+
+let ajax_call = function (endpoint, request_parameters) {
+    $.getJSON(endpoint, request_parameters)
+        .done(response => {
+            // fade out the artists_div, then:
+            artists_div.fadeTo('slow', 0).promise().then(() => {
+                // replace the HTML contents
+                artists_div.html(response['html_from_view'])
+                // fade-in the div with new contents
+                artists_div.fadeTo('slow', 1)
+                // stop animating search icon
+                search_icon.removeClass('blink')
+            })
+        })
+}
+
+
+user_input.on('keyup', function () {
+
+    const request_parameters = {
+        q: $(this).val(),// value of user_input: the HTML element with ID user-input
+    }
+
+
+    // start animating the search icon with the CSS class
+    search_icon.addClass('blink')
+
+    // if scheduled_function is NOT false, cancel the execution of the function
+    if (scheduled_function) {
+        clearTimeout(scheduled_function)
+    }
+
+    // setTimeout returns the ID of the function to be executed
+    scheduled_function = setTimeout(ajax_call, delay_by_in_ms, endpoint, request_parameters)
+})
+</script>
+
+
+{% endblock  %}

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block title %} Appointments{% endblock %}
+
+{% block content %}
+
+    <!--Container-->
+    <div class="row py-5">
+        <div class="col py-3 px-5">
+            <h1 id="Page-title">Appointments</h1>
+            <!--Appointment Title-->
+        </div>
+    </div>
+    <div class="row px-5">
+
+        <!--New Appointment Button-->
+        <div class="col-5">
+            <form action="{% url 'appointments:add-appointment' %}">
+                {% csrf_token %}
+                <button class="btn btn-primary btn-md" id="Add-btn" type="submit">New appointment</button>
+            </form>
+        </div>
+        <!--End New Appointment Button-->
+
+        <!--Droplist-->
+        <div class="col d-flex justify-content-end">
+            <div class="btn-group">
+                <button class="btn btn-md dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                    id="filter-droplist">
+                    Pending
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a id="dropdown-item" class="dropdown-item" href="{% url 'appointments:appointments' %}">All</a></li>
+                    <li><a id="dropdown-item" class="dropdown-item" href="#">Pending</a></li>
+                    <li><a id="dropdown-item" class="dropdown-item" href="{% url 'appointments:approved_appointments' %}">Approved</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--End Droplist-->
+
+        <!--Search bar-->
+        <div class="col">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchbar">
+                <button class="btn btn" type="submit" id="Search-btn">Search</button>
+            </form>
+        </div>
+    </div>
+    <!--End Search bar-->
+
+    <div class="row px-5 py-5">
+        <!--row-->
+
+        <!--Appointment List-->
+        <ul class="list-group">
+
+            {% for patient in pending_appointments %}
+
+            <!--Appointment item 01-->
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-5 py-2">{{patient.patient.fname}} {{patient.patient.lname}}</div>
+                    <div class="col-md-3 py-2">{{patient.appointment_date}}</div>
+                    <div class="col d-flex justify-content-end">
+                        <form action="change_state/{{ patient.patient.patient_id }}/" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary btn-md"
+                                id="Approve-appointment-btn">Approve</button>
+                        </form> 
+                    </div>
+                    <div class="col">
+                        <form action="delete_appointment/{{ patient.patient.patient_id }}/" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-md"
+                                id="Delete-appointment-btn">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+            <!--End Appointment item 01-->
+
+            <!--Add Appointments items Here!-->
+            {% endfor %}
+        </ul>
+    </div>
+    <!--End row-->
+
+</div>
+<!--End Container-->
+
+<!--main row-->
+
+<!--main container-->
+
+{% endblock %}
