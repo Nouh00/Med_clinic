@@ -1,3 +1,3 @@
 # Med_clinic
-## An appointment website for Clinics
+## # A Medical Clinic Appointment Management WebApp
 
