@@ -1,2 +1,3 @@
 # Med_clinic
-An appointment website for Clinics
+## An appointment website for Clinics
+
