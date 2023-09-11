@@ -53,19 +53,92 @@ This system serves two primary roles:
 - **Drug:** A prescribed medicine.
 - **Bill:** A statement of the clinic's owed money to the patient for services provided.
 
-## Screenshots
-![Screenshot 1](link-to-screenshot-1.png)
-![Screenshot 2](link-to-screenshot-2.png)
-![Screenshot 3](link-to-screenshot-3.png)
+## User Interfaces
 
-## Getting Started
-Provide instructions for setting up the project locally, including dependencies, configurations, and environment variables. Mention how to initialize the database.
+### Home Page
+The website’s home page features a modern and minimal design to enhance user experience. The "Book your appointment" call-to-action button allows patients to quickly and easily book appointments.
 
-## Usage
-Explain how to use the application, including navigation, adding patients, appointments, prescriptions, and managing profiles.
+![Home Page](link-to-home-page-screenshot.png) <!-- You can add a screenshot image here -->
 
-## Contributing
-If you want to contribute to this project, please follow our [Contributing Guidelines](CONTRIBUTING.md).
+### Sign Up
+The sign-up page provides a simple and user-friendly interface for new users to create accounts.
 
-## License
-This project is licensed under the [Your License Name] License - see the [LICENSE](LICENSE) file for details.
+![Sign Up Page](link-to-sign-up-screenshot.png) <!-- You can add a screenshot image here -->
+
+### Book an Appointment
+The "Book an Appointment" interface allows users to add new appointments efficiently.
+
+![Book an Appointment](link-to-appointment-screenshot.png) <!-- You can add a screenshot image here -->
+
+### Dashboard
+The Dashboard provides an overview of essential medical clinic statistics, including the total number of patients, consultations, prescriptions, and appointment statistics.
+
+![Dashboard](link-to-dashboard-screenshot.png) <!-- You can add a screenshot image here -->
+
+### Appointments
+The Appointments tab displays pending and approved appointments, complete with a search bar, filters, and a "New Appointment" button for doctors and secretaries to add appointments quickly.
+
+![Appointments](link-to-appointments-screenshot.png) <!-- You can add a screenshot image here -->
+
+### Consultations
+The Consultations tab lists all consultations conducted by doctors, along with patient details and prescription information.
+
+![Consultations](link-to-consultations-screenshot.png) <!-- You can add a screenshot image here -->
+
+### Start New Consultation
+This interface allows doctors to start a new consultation, recording patient information and writing prescriptions.
+
+![Start New Consultation](link-to-start-consultation-screenshot.png) <!-- You can add a screenshot image here -->
+
+### Prescriptions
+The Prescriptions tab displays all prescriptions written by doctors, enabling them to view, search, and delete prescriptions.
+
+![Prescriptions](link-to-prescriptions-screenshot.png) <!-- You can add a screenshot image here -->
+
+### New Prescription
+Doctors can easily create new prescriptions, specifying drug details, dosages, timing, and treatment duration.
+
+![New Prescription](link-to-new-prescription-screenshot.png) <!-- You can add a screenshot image here -->
+
+### View Prescription
+This interface allows doctors to view detailed information about a prescription.
+
+![View Prescription](link-to-view-prescription-screenshot.png) <!-- You can add a screenshot image here -->
+
+
+## Resources Used
+
+### Software Resources
+
+- **Django (Python Framework)**
+  - Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. It simplifies web development and is free and open source.
+  - Latest Version: v3.2.4
+  - Used Version: v3.2.4
+  - [Learn more about Django](https://www.djangoproject.com/)
+
+![Django Logo](link-to-django-logo.png) <!-- You can add an image of the Django logo -->
+
+- **PostgreSQL**
+  - PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance.
+  - Latest Version: v14.0 beta
+  - Used Version: v13.3
+  - [Learn more about PostgreSQL](https://www.postgresql.org/)
+
+![PostgreSQL Logo](link-to-postgresql-logo.png) <!-- You can add an image of the PostgreSQL logo -->
+
+- **Bootstrap**
+  - Bootstrap is a free and open-source CSS framework aimed at responsive, mobile-first front-end web development. It provides CSS and JavaScript-based design templates for various interface components.
+  - Latest Version: v5.0.1
+  - Used Version: v5.0.1
+  - [Learn more about Bootstrap](https://getbootstrap.com/)
+
+![Bootstrap Logo](link-to-bootstrap-logo.png) <!-- You can add an image of the Bootstrap logo -->
+
+- **jQuery**
+  - jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation, event handling, CSS animation, and Ajax. It's widely used and open-source.
+  - Latest Version: v3.6.0
+  - Used Version: v3.3.1
+  - [Learn more about jQuery](https://jquery.com/)
+
+![jQuery Logo](link-to-jquery-logo.png) <!-- You can add an image of the jQuery logo -->
+
