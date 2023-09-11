@@ -3,15 +3,12 @@
 <img src="https://github.com/Nouh00/Med_clinic/blob/main/med_clinic/staticfiles/img/appointment_form/LOGO-01.svg" alt="Project Logo" width="400" />
 
 ## Table of Contents
-- [Introduction](#introduction)
-- [Actors](#actors)
-- [Functionalities](#functionalities)
-- [Terminology](#terminology)
-- [Screenshots](#screenshots)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- Introduction
+- Actors
+- Functionalities
+- Terminology
+- User Interfaces (Screenshots)
+- Software Resources
 
 ## Introduction
 The Medical Cabinet Management Web Application is a powerful tool designed to streamline the management of patient appointments and records in medical cabinets. It provides an intuitive web interface to reduce the risk of errors in patient information, offer easy access to historical documents, and enable efficient statistics generation.
@@ -105,8 +102,6 @@ This interface allows doctors to view detailed information about a prescription.
 
 <img src="https://lh6.googleusercontent.com/hPmat44rxQ-X0Dei9IzJai23UoboFHx2dXwzN2xCU2HYyAHS2UpGW6j74Gc90UsD9ULQVg4axHFsTIGju09Wp9wqsI-CwNc0dMjb5-mtE6KyIF-pkFtIUvWSXB8eY9BEonU3FaE-56NUPxc" alt="Project Logo" align="center" width="600" />
 
-
-## Resources Used
 
 ### Software Resources
 
